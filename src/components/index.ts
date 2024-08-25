@@ -3,5 +3,7 @@ import CustomInput from './custom-input/CustomInput.component';
 import CustomBottomSheet from './custom-bottom-sheet/CustomBottomSheet.component';
 import MasonryLayout from './masonry-layout/MasonryLayout.component';
 import VideoView from './video-view/VideoView.component';
+import OnboardingItem from './onboarding-item/OnboardingItem.component';
+import CustomButton from './custom-button/CustomButton.component';
 
-export { TopNavActions, CustomInput, CustomBottomSheet, MasonryLayout,VideoView };
+export { TopNavActions, CustomInput, CustomBottomSheet, MasonryLayout,VideoView, OnboardingItem, CustomButton };
