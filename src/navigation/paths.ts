@@ -11,4 +11,6 @@ export const paths = {
   SETTINGSSTACK: 'SettingsStack',
   SETTINGS: 'Settings',
   BOTTOMNAVIGATION: 'BottomNavigation',
+  DETAILS: 'Details',
+  VIDEODETAILS: 'VideoDetails'
 } as const;

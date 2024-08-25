@@ -5,6 +5,8 @@ export type RootStackParamList = {
   Splash: undefined;
   Onboarding: undefined;
   AuthStack: undefined;
+  Details: undefined;
+  VideoDetails: undefined;
 };
 
 export interface LayoutProps {
@@ -15,4 +17,15 @@ export interface LayoutProps {
 export interface TopNavActionsProps {
   rightIcon?: () => ReactNode;
   leftIcon?: () => ReactNode;
+  onBack?: () => void
+}
+
+export interface ItemType {
+  videoUrl?: string;
+  audioUrl?: string;
+  bgImage?: string;
+  modelUrl?: string;
+  title?: string;
+  description?: string;
+  id: number;
 }

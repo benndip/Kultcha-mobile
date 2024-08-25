@@ -8,7 +8,7 @@ const Layout = ({ children, rightIcon, leftIcon }: LayoutProps) => {
   return (
     <View style={styles.container}>
       <TopNavActions />
-      <View style={{flex: 1}}>{children}</View>
+      <View className='pt-6 px-2'>{children}</View>
     </View>
   );
 };
