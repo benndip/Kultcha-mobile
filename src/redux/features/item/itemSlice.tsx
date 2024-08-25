@@ -1,5 +1,5 @@
-import { ItemType } from '@/@types';
 import { createSlice } from '@reduxjs/toolkit';
+import { ItemType } from '../../../@types';
 
 type MyItemType = {
   item: ItemType | null;

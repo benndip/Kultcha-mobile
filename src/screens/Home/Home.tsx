@@ -1,7 +1,7 @@
-import { ChevronRightIcon, SearchIcon } from '@/assets/icons';
-import { images } from '@/assets/images';
-import { CustomInput, TopNavActions } from '@/components';
-import { categories } from '@/constants/categories';
+import { ChevronRightIcon, SearchIcon } from '../../assets/icons';
+import { images } from '../../assets/images';
+import { CustomInput, TopNavActions } from '../../components';
+import { categories } from '../../constants/categories';
 import React, { useState } from 'react';
 import {
   Image,
@@ -15,10 +15,10 @@ import LinearGradient from 'react-native-linear-gradient';
 import { defaultSpacing, DEVICE_HEIGHT } from './../../constants/sizes';
 import styles from './Home.style';
 import { twMerge } from 'tailwind-merge';
-import { useAppDispatch } from '@/redux/store';
-import { ItemType } from '@/@types';
-import { setItem } from '@/redux/features/item/itemSlice';
-import { paths } from '@/navigation/paths';
+import { useAppDispatch } from '../../redux/store';
+import { ItemType } from '../../@types';
+import { setItem } from '../../redux/features/item/itemSlice';
+import { paths } from '../../navigation/paths';
 
 const Home = ({ navigation }: any) => {
   const [active, setActive] = useState(categories[0].title);

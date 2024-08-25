@@ -1,4 +1,4 @@
-import { DEVICE_HEIGHT, DEVICE_WIDTH } from '@/constants/sizes';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../../constants/sizes';
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({

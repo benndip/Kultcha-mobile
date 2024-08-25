@@ -1,19 +1,16 @@
+import React from 'react';
 import {
   Image,
   ImageBackground,
-  StyleSheet,
   Text,
   TouchableOpacity,
-  View,
+  View
 } from 'react-native';
-import React from 'react';
-import Layout from '@/layouts/Layout';
-import { RootState, useAppSelector } from '@/redux/store';
-import { DEVICE_HEIGHT, DEVICE_WIDTH } from '@/constants/sizes';
-import { MoreVerticalIcon } from '@/assets/icons';
-import { colors } from '@/constants/colors';
-import styles from './Details.styles';
 import LinearGradient from 'react-native-linear-gradient';
+import { MoreVerticalIcon } from '../../assets/icons';
+import Layout from '../../layouts/Layout';
+import { RootState, useAppSelector } from '../../redux/store';
+import styles from './Details.styles';
 
 const Details = () => {
   const { item } = useAppSelector((state: RootState) => state.item);

@@ -1,5 +1,5 @@
-import { colors } from '@/constants/colors';
-import { DEVICE_HEIGHT } from '@/constants/sizes';
+import { colors } from '../../constants/colors';
+import { DEVICE_HEIGHT } from '../../constants/sizes';
 import React, { ReactNode } from 'react';
 import { TextInput, TextInputProps, View } from 'react-native';
 import { twMerge } from 'tailwind-merge';

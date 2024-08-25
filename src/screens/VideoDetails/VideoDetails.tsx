@@ -1,7 +1,7 @@
-import { PlayIcon } from '@/assets/icons';
-import { VideoView } from '@/components';
-import { DEVICE_HEIGHT } from '@/constants/sizes';
-import Layout from '@/layouts/Layout';
+import { PlayIcon } from '../../assets/icons';
+import { VideoView } from '../../components';
+import { DEVICE_HEIGHT } from '../../constants/sizes';
+import Layout from '../../layouts/Layout';
 import React, { useRef, useState } from 'react';
 import { Image, ScrollView, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';

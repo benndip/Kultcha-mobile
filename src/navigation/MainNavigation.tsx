@@ -1,11 +1,11 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { RootStackParamList } from '@/@types';
+import { RootStackParamList } from '../@types';
 import { paths } from './paths';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomNavigation from './BottomNavigation';
-import { Details, Onboarding, Splash, VideoDetails } from '@/screens';
+import { Details, Onboarding, Splash, VideoDetails } from '../screens';
 import AuthStack from './stacks/AuthStack';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -14,7 +14,7 @@ const MainNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={paths.BOTTOMNAVIGATION}
+        initialRouteName={paths.ONBOARDING}
         screenOptions={{
           headerShown: false,
         }}

@@ -1,14 +1,14 @@
-import { ItemType } from '@/@types';
-import { SearchIcon } from '@/assets/icons';
-import { CustomInput, MasonryLayout } from '@/components';
-import { dummyItems } from '@/constants/dummyItems';
-import { DEVICE_HEIGHT } from '@/constants/sizes';
-import Layout from '@/layouts/Layout';
-import { paths } from '@/navigation/paths';
-import { setItem } from '@/redux/features/item/itemSlice';
-import { RootState, useAppDispatch, useAppSelector } from '@/redux/store';
+
 import React from 'react';
 import { Text, View } from 'react-native';
+import { useAppDispatch } from '../../redux/store';
+import { ItemType } from '../../@types';
+import { setItem } from '../../redux/features/item/itemSlice';
+import { paths } from '../../navigation/paths';
+import Layout from '../../layouts/Layout';
+import { CustomInput, MasonryLayout } from '../../components';
+import { SearchIcon } from '../../assets/icons';
+import { dummyItems } from '../../constants/dummyItems';
 
 const Favorites = ({ navigation }: any) => {
   const dispatch = useAppDispatch();

@@ -1,5 +1,5 @@
-import { LayoutProps } from '@/@types';
-import { TopNavActions } from '@/components';
+import { LayoutProps } from '../@types';
+import { TopNavActions } from '../components';
 import React from 'react';
 import { View } from 'react-native';
 import styles from './Layouts.style';

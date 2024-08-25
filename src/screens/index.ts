@@ -1,4 +1,4 @@
-import Home from '@/screens/Home/Home';
+import Home from '../screens/Home/Home';
 import Favorites from './Favorites/Favorites.screen';
 import Settings from './Settings/Settings';
 import Register from './Register/Register';

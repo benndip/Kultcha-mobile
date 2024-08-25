@@ -1,6 +1,6 @@
 // Load the module
 
-import { DEVICE_HEIGHT, DEVICE_WIDTH } from '@/constants/sizes';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../../constants/sizes';
 import React, { forwardRef } from 'react';
 import { StyleSheet } from 'react-native';
 import Video, { VideoRef } from 'react-native-video';

@@ -1,4 +1,4 @@
-import { DEVICE_HEIGHT, DEVICE_WIDTH } from '@/constants/sizes';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../../constants/sizes';
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-end',
     justifyContent: 'center',
     flexDirection: 'row',
-    paddingBottom: DEVICE_HEIGHT*0.12
+    paddingBottom: DEVICE_HEIGHT * 0.12,
   },
   seekIcon: {
     width: 40,

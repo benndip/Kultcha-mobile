@@ -1,5 +1,5 @@
-import { DEVICE_HEIGHT, DEVICE_WIDTH } from '@/constants/sizes';
 import { StyleSheet } from 'react-native';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../../constants/sizes';
 
 const styles = StyleSheet.create({
   gradientImage: {

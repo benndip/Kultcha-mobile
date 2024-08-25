@@ -1,4 +1,4 @@
-import { colors } from '@/constants/colors';
+import { colors } from '../constants/colors';
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import {
@@ -10,8 +10,8 @@ import { Home } from '../screens';
 import { paths } from './paths';
 import FavoritesStack from './stacks/FavoritesStack';
 import SettingsStack from './stacks/SettingsStack';
-import { HeartIcon, SettingsIcon } from '@/assets/icons';
-import { DEVICE_HEIGHT, DEVICE_WIDTH } from '@/constants/sizes';
+import { HeartIcon, SettingsIcon } from '../assets/icons';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../constants/sizes';
 
 const Tabs = AnimatedTabBarNavigator();
 

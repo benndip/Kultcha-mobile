@@ -1,4 +1,4 @@
-import { ItemType } from '@/@types';
+import { ItemType } from '../@types';
 
 export const dummyItems: ItemType[] = [
   {
@@ -9,6 +9,7 @@ export const dummyItems: ItemType[] = [
     title: 'Introduction to AI',
     description: "A beginner's guide to understanding Artificial Intelligence.",
     id: 0,
+    height: 136,
   },
   {
     videoUrl: 'https://example.com/video2.mp4',
@@ -18,6 +19,7 @@ export const dummyItems: ItemType[] = [
     title: 'Machine Learning Basics',
     description: 'An overview of machine learning concepts and applications.',
     id: 1,
+    height: 136,
   },
   {
     videoUrl: 'https://example.com/video3.mp4',
@@ -27,6 +29,7 @@ export const dummyItems: ItemType[] = [
     title: 'Deep Learning Explained',
     description: 'In-depth exploration of deep learning and neural networks.',
     id: 2,
+    height: 136,
   },
   {
     videoUrl: 'https://example.com/video4.mp4',
@@ -37,6 +40,7 @@ export const dummyItems: ItemType[] = [
     description:
       'Understanding how machines process and understand human language.',
     id: 3,
+    height: 136,
   },
   {
     videoUrl: 'https://example.com/video5.mp4',
@@ -47,6 +51,7 @@ export const dummyItems: ItemType[] = [
     description:
       'An introduction to how computers perceive and interpret visual data.',
     id: 4,
+    height: 136,
   },
   {
     videoUrl: 'https://example.com/video6.mp4',
@@ -56,6 +61,7 @@ export const dummyItems: ItemType[] = [
     title: 'Robotics and Automation',
     description: 'The role of AI in robotics and industrial automation.',
     id: 5,
+    height: 136,
   },
   {
     videoUrl: 'https://example.com/video7.mp4',
@@ -66,6 +72,7 @@ export const dummyItems: ItemType[] = [
     description:
       'Discussion on ethical concerns in the development and deployment of AI.',
     id: 6,
+    height: 136,
   },
   {
     videoUrl: 'https://example.com/video8.mp4',
@@ -75,5 +82,6 @@ export const dummyItems: ItemType[] = [
     title: 'AI in Healthcare',
     description: 'Exploring the impact of AI in the healthcare industry.',
     id: 7,
+    height: 136,
   },
 ];

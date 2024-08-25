@@ -1,8 +1,8 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { TopNavActionsProps } from '@/@types';
-import { ChevronLeftIcon, MoreVerticalIcon } from '@/assets/icons';
 import { useNavigation } from '@react-navigation/native';
+import { TopNavActionsProps } from '../../@types';
+import { ChevronLeftIcon, MoreVerticalIcon } from '../../assets/icons';
 
 const TopNavActions = ({ rightIcon, leftIcon, onBack }: TopNavActionsProps) => {
   const navigation = useNavigation();

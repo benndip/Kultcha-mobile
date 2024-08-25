@@ -1,5 +1,4 @@
-import { favorites } from '@/constants/favorites';
-import { DEVICE_HEIGHT } from '@/constants/sizes';
+
 import React from 'react';
 import {
   Image,
@@ -8,6 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { DEVICE_HEIGHT } from '../../constants/sizes';
 
 const NUM_COLUMNS = 2;
 

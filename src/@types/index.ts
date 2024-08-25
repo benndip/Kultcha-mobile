@@ -28,4 +28,5 @@ export interface ItemType {
   title?: string;
   description?: string;
   id: number;
+  height?: number;
 }

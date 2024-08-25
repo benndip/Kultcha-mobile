@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   user: null,
+  isOnboarded: false
 };
 
 export const authSlice = createSlice({
@@ -11,10 +12,13 @@ export const authSlice = createSlice({
     setUser: (state, { payload }) => {
       state.user = payload;
     },
+    setIsOnboarded: (state, { payload }) => {
+      state.isOnboarded = payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setUser } = authSlice.actions;
+export const { setUser, setIsOnboarded } = authSlice.actions;
 
 export default authSlice.reducer;
