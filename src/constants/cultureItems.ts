@@ -1,7 +1,7 @@
-export const categories = [
+export const cultureItems = [
   {
     id: 0,
-    title: 'Meals',
+    title: 'Bakweri',
     mainBg: require('../assets/images/cult1.png'),
     items: [
       {
@@ -32,11 +32,29 @@ export const categories = [
         description: 'Discover how AI helps create healthier meal options.',
         id: 2,
       },
+      {
+        videoUrl: 'https://example.com/video10.mp4',
+        audioUrl: 'https://example.com/audio10.mp3',
+        bgImage: require('../assets/images/cult1.png'),
+        modelUrl: 'https://example.com/model10.glb',
+        title: 'AI in Music Production',
+        description: 'Discover how AI is revolutionizing music creation.',
+        id: 3,
+      },
+      {
+        videoUrl: 'https://example.com/video11.mp4',
+        audioUrl: 'https://example.com/audio11.mp3',
+        bgImage: require('../assets/images/cult1.png'),
+        modelUrl: 'https://example.com/model11.glb',
+        title: 'AI Composers',
+        description: "Exploring AI's role in composing original music.",
+        id: 4,
+      },
     ],
   },
   {
     id: 1,
-    title: 'Places',
+    title: 'Bangwa',
     mainBg: require('../assets/images/cult8.png'),
     items: [
       {
@@ -63,7 +81,7 @@ export const categories = [
   },
   {
     id: 2,
-    title: 'Sites',
+    title: 'Nkambe',
     mainBg: require('../assets/images/cult6.png'),
     items: [
       {
@@ -89,7 +107,7 @@ export const categories = [
   },
   {
     id: 3,
-    title: 'Dressings',
+    title: 'Bassa',
     mainBg: require('../assets/images/cult4.png'),
     items: [
       {
@@ -114,7 +132,32 @@ export const categories = [
   },
   {
     id: 4,
-    title: 'Songs',
+    title: 'Bamoum',
+    mainBg: require('../assets/images/cult5.png'),
+    items: [
+      {
+        videoUrl: 'https://example.com/video10.mp4',
+        audioUrl: 'https://example.com/audio10.mp3',
+        bgImage: require('../assets/images/cult1.png'),
+        modelUrl: 'https://example.com/model10.glb',
+        title: 'AI in Music Production',
+        description: 'Discover how AI is revolutionizing music creation.',
+        id: 0,
+      },
+      {
+        videoUrl: 'https://example.com/video11.mp4',
+        audioUrl: 'https://example.com/audio11.mp3',
+        bgImage: require('../assets/images/cult1.png'),
+        modelUrl: 'https://example.com/model11.glb',
+        title: 'AI Composers',
+        description: "Exploring AI's role in composing original music.",
+        id: 1,
+      },
+    ],
+  },
+  {
+    id: 5,
+    title: 'Nordiste',
     mainBg: require('../assets/images/cult5.png'),
     items: [
       {
@@ -139,8 +182,10 @@ export const categories = [
   },
 ];
 
-const arr = categories.map((item) => {
+const arr = cultureItems.map((item) => {
   return item.items;
 });
+
+export const cultures = cultureItems.map((item) => item.title);
 
 export const allItems = arr.flat();

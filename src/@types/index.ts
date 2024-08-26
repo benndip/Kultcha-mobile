@@ -9,6 +9,7 @@ export type RootStackParamList = {
   VideoDetails: undefined;
   Search: undefined;
   Deposit: undefined;
+  Upload: undefined;
   CategoryItems: undefined;
 };
 
@@ -18,6 +19,7 @@ export interface LayoutProps extends TopNavActionsProps {
 export interface TopNavActionsProps {
   onBack?: () => void
   showPurse?: boolean
+  hideBack?: boolean
   showSearch?: boolean
   showHeart?: boolean
   onHeart?: () => void

@@ -17,4 +17,5 @@ export const paths = {
   SEARCH: 'Search',
   DEPOSIT: 'Deposit',
   CATEGORYITEMS: 'CategoryItems',
+  UPLOAD: 'Upload',
 } as const;

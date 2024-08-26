@@ -10,17 +10,21 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import { twMerge } from 'tailwind-merge';
 import { ItemType } from '../../@types';
-import { ChevronRightIcon, SearchIcon } from '../../assets/icons';
+import { SearchIcon } from '../../assets/icons';
 import { CustomInput, TopNavActions } from '../../components';
 import { categories } from '../../constants/categories';
+import { cultureItems, cultures } from '../../constants/cultureItems';
+import { defaultSpacing, DEVICE_HEIGHT } from '../../constants/sizes';
 import { paths } from '../../navigation/paths';
 import { setFavorites, setItem } from '../../redux/features/item/itemSlice';
 import { useAppDispatch } from '../../redux/store';
-import { defaultSpacing, DEVICE_HEIGHT } from '../../constants/sizes';
 import styles from './CategoryItems.style';
 
-const CategoryItems = ({ navigation }: any) => {
-  const [active, setActive] = useState(categories[0].title);
+const CategoryItems = ({ navigation, route }: any) => {
+  const [active, setActive] = useState(cultureItems[0].title);
+  const categoryItem = categories.filter(
+    (item) => item.title === route?.params?.title
+  )?.[0];
   const activeText = 'font-bold text-redVar1';
   const dispatch = useAppDispatch();
   const handleItem = (item: ItemType) => {
@@ -30,15 +34,15 @@ const CategoryItems = ({ navigation }: any) => {
   const handleAddFavorite = () => {
     dispatch(
       setFavorites(
-        categories.filter((item) => item.title === active)?.[0].items[0]
+        categories.filter((item) => item.title === active)?.[0]?.items[0]
       )
     );
   };
   return (
-    <View style={{ flex: 1 }}>
+    <ScrollView style={{ flex: 1 }}>
       {/* <StatusBar style='light' /> */}
       <ImageBackground
-        source={categories.filter((item) => item.title === active)?.[0].mainBg}
+        source={categoryItem.mainBg}
         style={styles.gradientImage}
         borderBottomRightRadius={50}
         borderBottomLeftRadius={50}
@@ -55,71 +59,69 @@ const CategoryItems = ({ navigation }: any) => {
           />
           <View className='flex-1 justify-end items-center'>
             <Text className='font-bold text-center text-white text-lg'>
-              {categories.filter((item) => item.title === active)?.[0].title}
+              {categoryItem?.title}
             </Text>
           </View>
         </LinearGradient>
       </ImageBackground>
-      <View className='flex-1' style={{ ...defaultSpacing }}>
+      <View style={{ ...defaultSpacing }}>
         <CustomInput
           placeholder='Search'
           leftIcon={() => <SearchIcon color='#a4a4a4' />}
         />
-        <View className='flex-row items-center justify-around my-2'>
-          {categories.slice(0, 4).map((item) => (
+        <ScrollView
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            paddingVertical: 10,
+            alignItems: 'center',
+          }}
+        >
+          {cultures.map((item) => (
             <TouchableOpacity
-              key={item.title}
+              key={item}
               className='p-3 mx-2 flex-col'
-              onPress={() => setActive(item.title)}
+              onPress={() => setActive(item)}
             >
               <Text
                 className={twMerge(
                   'text-center',
-                  item.title === active && activeText
+                  item === active && activeText
                 )}
               >
-                {item.title}
+                {item}
               </Text>
-              {item.title === active && (
+              {item === active && (
                 <View className='h-1 bg-redVar1 rounded-lg mt-1' />
               )}
             </TouchableOpacity>
           ))}
-          <TouchableOpacity
-            className='ml-3w-10 p-3 flex-row items-center'
-            onPress={() => navigation.navigate(paths.ALLITEMS)}
-          >
-            <Text>All</Text>
-            <ChevronRightIcon color={'#000'} size={20} />
-          </TouchableOpacity>
-        </View>
-        <View className='flex-1'>
+        </ScrollView>
+        <View>
           <ScrollView
             contentContainerStyle={styles.scrollContent}
             showsVerticalScrollIndicator={false}
           >
-            {categories
-              .filter((item) => item.title === active)?.[0]
-              .items.map((item) => (
-                <TouchableOpacity
-                  className='w-[31%] overflow-hidden rounded-md'
-                  style={{
-                    height: DEVICE_HEIGHT * 0.2,
-                  }}
+            {categoryItem.items.map((item) => (
+              <TouchableOpacity
+                className='w-[31%] overflow-hidden rounded-md'
+                style={{
+                  height: DEVICE_HEIGHT * 0.2,
+                }}
+                key={item.id}
+                onPress={() => handleItem(item)}
+              >
+                <Image
+                  source={item.bgImage}
                   key={item.id}
-                  onPress={() => handleItem(item)}
-                >
-                  <Image
-                    source={item.bgImage}
-                    key={item.id}
-                    className='w-full h-full'
-                  />
-                </TouchableOpacity>
-              ))}
+                  className='w-full h-full'
+                />
+              </TouchableOpacity>
+            ))}
           </ScrollView>
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

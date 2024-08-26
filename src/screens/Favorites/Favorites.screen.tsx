@@ -5,7 +5,7 @@ import { ItemType } from '../../@types';
 import { setItem } from '../../redux/features/item/itemSlice';
 import { paths } from '../../navigation/paths';
 import Layout from '../../layouts/Layout';
-import { CustomInput, MasonryLayout } from '../../components';
+import { CustomInput, Fab, MasonryLayout } from '../../components';
 import { SearchIcon } from '../../assets/icons';
 import { dummyItems } from '../../constants/dummyItems';
 
@@ -36,6 +36,7 @@ const Favorites = ({ navigation }: any) => {
           </View>
         )}
       </View>
+      <Fab />
     </Layout>
   );
 };

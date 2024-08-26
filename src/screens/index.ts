@@ -11,6 +11,7 @@ import AllItems from './AllItems/AllItems';
 import Search from './Search/Search';
 import Deposit from './Deposit/Deposit';
 import CategoryItems from './CategoryItems/CategoryItems';
+import Upload from './upload/Upload.screen';
 
 export {
   Splash,
@@ -26,4 +27,5 @@ export {
   Search,
   Deposit,
   CategoryItems,
+  Upload
 };

@@ -16,7 +16,7 @@ const CustomBottomSheet = forwardRef(
     {
       children,
       bgColor = '#fff',
-      height,
+      height = '40%',
       backdropColor = 'transparent',
       paddingHorizontal,
       bottom,

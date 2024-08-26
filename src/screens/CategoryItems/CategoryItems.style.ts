@@ -10,8 +10,9 @@ const styles = StyleSheet.create({
   gradientView: {
     borderBottomRightRadius: DEVICE_WIDTH * 0.1,
     borderBottomLeftRadius: DEVICE_WIDTH * 0.1,
-    paddingVertical: DEVICE_HEIGHT * 0.07,
+    paddingTop: DEVICE_HEIGHT * 0.055,
     paddingHorizontal: DEVICE_WIDTH * 0.04,
+    paddingBottom: DEVICE_HEIGHT * 0.035,
     flex: 1,
   },
   scrollContent: {
@@ -19,7 +20,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     gap: 10,
     paddingBottom: DEVICE_HEIGHT * 0.11,
-    justifyContent: 'space-evenly',
   },
 });
 

@@ -18,17 +18,19 @@ interface IProps {
   onPress?: () => void;
   width?: any,
   bgColor?: string;
+  textClassName?: string;
   style?: ViewStyle
 }
 
 const CustomButton = ({
-  height = DEVICE_HEIGHT * 0.06,
+  height = DEVICE_HEIGHT * 0.07,
   leftIcon,
   rightIcon,
   title,
   width = '100%',
   bgColor=colors.golden,
   style,
+  textClassName,
   onPress,
   ...props
 }: IProps) => {
@@ -50,7 +52,7 @@ const CustomButton = ({
       {...props}
     >
       {leftIcon?.() && <View>{leftIcon?.()}</View>}
-      <Text>{title}</Text>
+      <Text className={textClassName}>{title}</Text>
       {leftIcon?.() && <View>{leftIcon?.()}</View>}
     </TouchableOpacity>
   );

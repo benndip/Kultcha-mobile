@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { Text, TouchableOpacity, View, ScrollView } from 'react-native';
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
 import { twMerge } from 'tailwind-merge';
 import { ItemType } from '../../@types';
 import { ChevronRightIcon } from '../../assets/icons';
 import { MasonryLayout } from '../../components';
 import { allItems, categories } from '../../constants/categories';
+import { colors } from '../../constants/colors';
 import Layout from '../../layouts/Layout';
 import { paths } from '../../navigation/paths';
-import { setFavorites, setItem } from '../../redux/features/item/itemSlice';
+import { setCategoryItem, setItem } from '../../redux/features/item/itemSlice';
 import { useAppDispatch } from '../../redux/store';
-import { DEVICE_HEIGHT, DEVICE_WIDTH } from './../../constants/sizes';
-import { colors } from '../../constants/colors';
+import { DEVICE_HEIGHT } from './../../constants/sizes';
 
 const Home = ({ navigation }: any) => {
   const [active, setActive] = useState('all');
@@ -20,8 +20,18 @@ const Home = ({ navigation }: any) => {
     dispatch(setItem(item));
     navigation.navigate(paths.DETAILS);
   };
+
+  const handleTabPress = (title: string) => {
+    setActive(title);
+    // const categoryItem = categories.filter((item) => item.title === title)?.[0];
+    // dispatch(setCategoryItem(categoryItem));
+    navigation.navigate(paths.CATEGORYITEMS, {
+      title: title,
+    });
+  };
+
   return (
-    <Layout showSearch>
+    <Layout showSearch hideBack>
       {/* <StatusBar style='light' /> */}
       <Text className='text-center font-bold text-lg'>All</Text>
       <View className='flex-row items-center justify-around my-2'>
@@ -54,7 +64,7 @@ const Home = ({ navigation }: any) => {
               <TouchableOpacity
                 key={item.title}
                 className='p-3 mx-2 flex-col'
-                onPress={() => setActive(item.title)}
+                onPress={() => handleTabPress(item.title)}
               >
                 <Text
                   className={twMerge(
@@ -85,6 +95,7 @@ const Home = ({ navigation }: any) => {
           paddingBottom: DEVICE_HEIGHT * 0.2,
           paddingTop: DEVICE_HEIGHT * 0.03,
         }}
+        // showTitle={false}
       />
       {/* <ScrollView
         contentContainerStyle={styles.scrollContent}

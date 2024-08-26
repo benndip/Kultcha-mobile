@@ -1,4 +1,3 @@
-import { colors } from '../constants/colors';
 import { Ionicons } from '@expo/vector-icons';
 import React from 'react';
 import {
@@ -6,20 +5,20 @@ import {
   DotSize,
   TabElementDisplayOptions,
 } from 'react-native-animated-nav-tab-bar';
-import { Home } from '../screens';
+import { HeartIcon, SettingsIcon } from '../assets/icons';
+import { colors } from '../constants/colors';
+import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../constants/sizes';
 import { paths } from './paths';
 import FavoritesStack from './stacks/FavoritesStack';
-import SettingsStack from './stacks/SettingsStack';
-import { HeartIcon, SettingsIcon } from '../assets/icons';
-import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../constants/sizes';
 import HomeStack from './stacks/HomeStack';
+import SettingsStack from './stacks/SettingsStack';
 
 const Tabs = AnimatedTabBarNavigator();
 
 const BottomNavigation = () => {
   return (
     <Tabs.Navigator
-      screenOptions={{ headerShown: false, }}
+      screenOptions={{ headerShown: false }}
       appearance={{
         whenActiveShow: TabElementDisplayOptions.ICON_ONLY,
         floating: true,
@@ -33,11 +32,11 @@ const BottomNavigation = () => {
         // inactiveTintColor: GREY,
         activeBackgroundColor: colors.greyVar1,
         tabStyle: {
-            justifyContent: 'center',
-            height: DEVICE_HEIGHT*0.09,
-            alignSelf: 'center',
-            width: DEVICE_WIDTH*0.7
-        }
+          justifyContent: 'center',
+          height: DEVICE_HEIGHT * 0.09,
+          alignSelf: 'center',
+          width: DEVICE_WIDTH * 0.7,
+        },
       }}
     >
       <Tabs.Screen

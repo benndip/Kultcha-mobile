@@ -7,6 +7,7 @@ import OnboardingItem from './onboarding-item/OnboardingItem.component';
 import CustomButton from './custom-button/CustomButton.component';
 import CustomSwitch from './custom-switch/CustomSwitch.component';
 import CustomNotificationSwitch from './custom-switch/CustomNotificationSwitch.component';
+import Fab from './Fab/Fab.component';
 
 export {
   TopNavActions,
@@ -18,4 +19,5 @@ export {
   CustomButton,
   CustomSwitch,
   CustomNotificationSwitch,
+  Fab
 };

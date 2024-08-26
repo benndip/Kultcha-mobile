@@ -1,9 +1,9 @@
-
 import React from 'react';
 import {
   Image,
   ScrollView,
   StyleSheet,
+  Text,
   TouchableOpacity,
   View,
 } from 'react-native';
@@ -21,28 +21,52 @@ const splitIntoColumns = (data: any, numColumns: any) => {
   return columns;
 };
 
-const MasonryLayout = ({ data, onPress, style }: any) => {
+const MasonryLayout = ({ data, onPress, style, showTitle = true }: any) => {
   const columns = splitIntoColumns(data, NUM_COLUMNS);
 
   return (
     <ScrollView
-      contentContainerStyle={[styles.container, {
-        ...style
-      }]}
+      contentContainerStyle={[
+        styles.container,
+        {
+          ...style,
+        },
+      ]}
       showsVerticalScrollIndicator={false}
     >
       {columns.map((column: any, columnIndex: any) => (
-        <View style={styles.column} key={`column_${columnIndex}`}>
+        <View
+          style={[
+            styles.column,
+            {
+              gap: showTitle ? DEVICE_HEIGHT * 0.02 : 0,
+            },
+          ]}
+          key={`column_${columnIndex}`}
+        >
           {column.map((item: any, index: any) => (
             <TouchableOpacity
               style={[
                 styles.itemContainer,
-                { height: heights[item.id % heights.length] },
+                {
+                  height: showTitle
+                    ? heights[item.id % heights.length] + DEVICE_HEIGHT * 0.01
+                    : heights[item.id % heights.length],
+                  paddingBottom: showTitle
+                    ? DEVICE_HEIGHT * 0.02
+                    : DEVICE_HEIGHT * 0.01,
+                  borderRadius: showTitle ? 0 : 8,
+                },
               ]}
               key={item.id + index}
               onPress={() => onPress?.(item)}
             >
               <Image source={item.bgImage} style={styles.image} />
+              {showTitle && (
+                <Text className='z-10 absolute -bottom-1 text-darkBrown font-semibold'>
+                  {item?.title}
+                </Text>
+              )}
             </TouchableOpacity>
           ))}
         </View>
@@ -62,18 +86,16 @@ const styles = StyleSheet.create({
   column: {
     flex: 1, // Each column takes up equal width
     marginHorizontal: 4,
-    gap: 4,
   },
   itemContainer: {
-    marginBottom: 10, // Spacing between items
-    borderRadius: 8,
-    backgroundColor: '#fff',
+    // backgroundColor: 'red',
     overflow: 'hidden',
   },
   image: {
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
+    borderRadius: 8,
   },
 });
 

@@ -4,10 +4,12 @@ import { ItemType } from '../../../@types';
 type MyItemType = {
   item: ItemType | null;
   favorites: any;
+  categoryItem: any;
 };
 
 const initialState: MyItemType = {
   item: null,
+  categoryItem: null,
   favorites: [],
 };
 
@@ -21,10 +23,13 @@ export const itemSlice = createSlice({
     setFavorites: (state, { payload }) => {
       state.favorites = [...(state?.favorites ?? []), payload];
     },
+    setCategoryItem: (state, { payload }) => {
+      state.categoryItem = payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setItem, setFavorites } = itemSlice.actions;
+export const { setItem, setFavorites, setCategoryItem } = itemSlice.actions;
 
 export default itemSlice.reducer;

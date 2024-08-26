@@ -4,10 +4,12 @@ import {
   EvilIcons,
   Feather,
   FontAwesome,
+  FontAwesome5,
   Ionicons,
   MaterialCommunityIcons,
   MaterialIcons,
 } from '@expo/vector-icons';
+import { colors } from '../../constants/colors';
 
 export const HeartIcon = (props: any) => (
   <Ionicons name='heart' size={22} color='#fff' {...props} />
@@ -20,6 +22,12 @@ export const ChevronLeftIcon = (props: any) => (
 );
 export const ChevronRightIcon = (props: any) => (
   <Feather name='chevron-right' size={22} color='#fff' {...props} />
+);
+export const ChevronDownIcon = (props: any) => (
+  <Feather name='chevron-down' size={22} color='#000' {...props} />
+);
+export const ChevronUpIcon = (props: any) => (
+  <Feather name='chevron-up' size={22} color='#fff' {...props} />
 );
 export const MoreVerticalIcon = (props: any) => (
   <Feather name='more-vertical' size={24} color='#fff' {...props} />
@@ -60,4 +68,17 @@ export const HelpIcon = (props: any) => (
   <Ionicons name='help-outline' size={20} color='#fff' {...props} />
 );
 export const AboutUsIcon = (props: any) => (
-<MaterialIcons name="groups" size={20} color="#fff" {...props} />);
+  <MaterialIcons name='groups' size={20} color='#fff' {...props} />
+);
+export const ExchangeIcon = (props: any) => (
+  <FontAwesome5 name='exchange-alt' size={24} color='#fff' {...props} />
+);
+export const CoinsIcon = (props: any) => (
+  <FontAwesome5 name='coins' size={14} color={colors.golden} {...props} />
+);
+export const AddIcon = (props: any) => (
+  <Ionicons name='add-outline' size={20} color='#fff' {...props} />
+);
+export const UploadIcon = (props: any) => (
+  <MaterialIcons name='cloud-upload' size={24} color='#fff'{...props} />
+);

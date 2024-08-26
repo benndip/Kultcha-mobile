@@ -45,6 +45,6 @@ export const settings = [
   {
     id: 6,
     leftIcon: <AboutUsIcon />,
-    title: 'Help',
+    title: 'About Us',
   },
 ];
