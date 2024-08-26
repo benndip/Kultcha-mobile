@@ -16,4 +16,5 @@ export const paths = {
   ALLITEMS: 'AllItems',
   SEARCH: 'Search',
   DEPOSIT: 'Deposit',
+  CATEGORYITEMS: 'CategoryItems',
 } as const;

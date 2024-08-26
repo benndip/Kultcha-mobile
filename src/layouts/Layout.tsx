@@ -4,11 +4,11 @@ import React from 'react';
 import { View } from 'react-native';
 import styles from './Layouts.style';
 
-const Layout = ({ children, ...props }: LayoutProps) => {
+const Layout = ({ children, ...props}: LayoutProps) => {
   return (
     <View style={styles.container}>
       <TopNavActions {...props} />
-      <View className='pt-6 px-2'>{children}</View>
+      <View className='pt-6 px-0'>{children}</View>
     </View>
   );
 };

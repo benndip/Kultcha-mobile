@@ -10,5 +10,20 @@ import VideoDetails from './VideoDetails/VideoDetails';
 import AllItems from './AllItems/AllItems';
 import Search from './Search/Search';
 import Deposit from './Deposit/Deposit';
+import CategoryItems from './CategoryItems/CategoryItems';
 
-export { Splash, Home, Favorites, Settings, Register, Onboarding, Login, Details, VideoDetails, AllItems, Search, Deposit };
+export {
+  Splash,
+  Home,
+  Favorites,
+  Settings,
+  Register,
+  Onboarding,
+  Login,
+  Details,
+  VideoDetails,
+  AllItems,
+  Search,
+  Deposit,
+  CategoryItems,
+};

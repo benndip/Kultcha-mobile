@@ -3,6 +3,7 @@ export const colors = {
   greyVar1: '#F3F3F3',
   greyVar2: '#A4A4A4',
   greyVar3: '#D9D9D9',
+  greyVar4: '#EEEEEE',
   redVar1: '#FF0909',
   golden: '#FFAA42',
 } as const;

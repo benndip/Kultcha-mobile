@@ -21,23 +21,25 @@ const splitIntoColumns = (data: any, numColumns: any) => {
   return columns;
 };
 
-const MasonryLayout = ({ data, onPress }: any) => {
+const MasonryLayout = ({ data, onPress, style }: any) => {
   const columns = splitIntoColumns(data, NUM_COLUMNS);
 
   return (
     <ScrollView
-      contentContainerStyle={styles.container}
+      contentContainerStyle={[styles.container, {
+        ...style
+      }]}
       showsVerticalScrollIndicator={false}
     >
       {columns.map((column: any, columnIndex: any) => (
         <View style={styles.column} key={`column_${columnIndex}`}>
-          {column.map((item: any, _: any) => (
+          {column.map((item: any, index: any) => (
             <TouchableOpacity
               style={[
                 styles.itemContainer,
                 { height: heights[item.id % heights.length] },
               ]}
-              key={item.id}
+              key={item.id + index}
               onPress={() => onPress?.(item)}
             >
               <Image source={item.bgImage} style={styles.image} />
@@ -59,8 +61,8 @@ const styles = StyleSheet.create({
   },
   column: {
     flex: 1, // Each column takes up equal width
-    marginHorizontal: 6,
-    gap: 6,
+    marginHorizontal: 4,
+    gap: 4,
   },
   itemContainer: {
     marginBottom: 10, // Spacing between items

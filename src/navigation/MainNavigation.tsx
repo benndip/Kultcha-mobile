@@ -5,7 +5,7 @@ import { RootStackParamList } from '../@types';
 import { paths } from './paths';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomNavigation from './BottomNavigation';
-import { Deposit, Details, Onboarding, Search, Splash, VideoDetails } from '../screens';
+import { CategoryItems, Deposit, Details, Onboarding, Search, Splash, VideoDetails } from '../screens';
 import AuthStack from './stacks/AuthStack';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -26,6 +26,7 @@ const MainNavigation = () => {
         <Stack.Screen name={paths.VIDEODETAILS} component={VideoDetails} />
         <Stack.Screen name={paths.SEARCH} component={Search} />
         <Stack.Screen name={paths.DEPOSIT} component={Deposit} />
+        <Stack.Screen name={paths.CATEGORYITEMS} component={CategoryItems} />
         <Stack.Screen
           name={paths.BOTTOMNAVIGATION}
           component={BottomNavigation}

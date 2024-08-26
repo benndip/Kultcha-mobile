@@ -489,3 +489,9 @@ export const categories = [
     ],
   },
 ];
+
+const arr = categories.map((item) => {
+  return item.items;
+});
+
+export const allItems = arr.flat();

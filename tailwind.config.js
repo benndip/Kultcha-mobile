@@ -9,6 +9,7 @@ module.exports = {
         greyVar2: '#a4a4a4',
         redVar1: '#FF0909',
         golden: '#FFAA42',
+        greyVar4: '#EEEEEE',
       }
     },
   },
