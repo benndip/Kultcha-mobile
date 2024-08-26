@@ -14,7 +14,7 @@ const MainNavigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName={paths.UPLOAD}
+        initialRouteName={paths.BOTTOMNAVIGATION}
         screenOptions={{
           headerShown: false,
         }}

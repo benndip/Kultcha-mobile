@@ -5,13 +5,14 @@ import {
   DotSize,
   TabElementDisplayOptions,
 } from 'react-native-animated-nav-tab-bar';
-import { HeartIcon, SettingsIcon } from '../assets/icons';
+import { HeartIcon, SettingsIcon, UploadIcon } from '../assets/icons';
 import { colors } from '../constants/colors';
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../constants/sizes';
 import { paths } from './paths';
 import FavoritesStack from './stacks/FavoritesStack';
 import HomeStack from './stacks/HomeStack';
 import SettingsStack from './stacks/SettingsStack';
+import { Upload } from '../screens';
 
 const Tabs = AnimatedTabBarNavigator();
 
@@ -64,6 +65,16 @@ const BottomNavigation = () => {
         }}
       />
 
+      <Tabs.Screen
+        name={paths.UPLOAD}
+        component={Upload}
+        options={{
+          tabBarLabel: 'Upload',
+          tabBarIcon: ({ focused, color, size }: any) => (
+            <UploadIcon size={size} color={focused ? color : '#fff'} />
+          ),
+        }}
+      />
       <Tabs.Screen
         name={paths.SETTINGSSTACK}
         component={SettingsStack}

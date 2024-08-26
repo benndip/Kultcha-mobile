@@ -92,34 +92,11 @@ const Home = ({ navigation }: any) => {
         }
         onPress={(item: ItemType) => handleItem(item)}
         style={{
-          paddingBottom: DEVICE_HEIGHT * 0.2,
+          paddingBottom: DEVICE_HEIGHT * 0.24,
           paddingTop: DEVICE_HEIGHT * 0.03,
         }}
         // showTitle={false}
       />
-      {/* <ScrollView
-        contentContainerStyle={styles.scrollContent}
-        showsVerticalScrollIndicator={false}
-      >
-        {categories
-          .filter((item) => item.title === active)?.[0]
-          .items.map((item) => (
-            <TouchableOpacity
-              className='w-[31%] overflow-hidden rounded-md'
-              style={{
-                height: DEVICE_HEIGHT * 0.2,
-              }}
-              key={item.id}
-              onPress={() => handleItem(item)}
-            >
-              <Image
-                source={item.bgImage}
-                key={item.id}
-                className='w-full h-full'
-              />
-            </TouchableOpacity>
-          ))}
-      </ScrollView> */}
     </Layout>
   );
 };
