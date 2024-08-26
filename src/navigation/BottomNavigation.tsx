@@ -12,13 +12,14 @@ import FavoritesStack from './stacks/FavoritesStack';
 import SettingsStack from './stacks/SettingsStack';
 import { HeartIcon, SettingsIcon } from '../assets/icons';
 import { DEVICE_HEIGHT, DEVICE_WIDTH } from '../constants/sizes';
+import HomeStack from './stacks/HomeStack';
 
 const Tabs = AnimatedTabBarNavigator();
 
 const BottomNavigation = () => {
   return (
     <Tabs.Navigator
-      screenOptions={{ headerShown: false }}
+      screenOptions={{ headerShown: false, }}
       appearance={{
         whenActiveShow: TabElementDisplayOptions.ICON_ONLY,
         floating: true,
@@ -40,8 +41,8 @@ const BottomNavigation = () => {
       }}
     >
       <Tabs.Screen
-        name={paths.HOME}
-        component={Home}
+        name={paths.HOMESTACK}
+        component={HomeStack}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ focused, color, size }: any) => (

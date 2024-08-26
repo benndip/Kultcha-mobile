@@ -1,7 +1,6 @@
-
 import React from 'react';
 import { Text, View } from 'react-native';
-import { useAppDispatch } from '../../redux/store';
+import { useAppDispatch, useAppSelector } from '../../redux/store';
 import { ItemType } from '../../@types';
 import { setItem } from '../../redux/features/item/itemSlice';
 import { paths } from '../../navigation/paths';
@@ -12,6 +11,8 @@ import { dummyItems } from '../../constants/dummyItems';
 
 const Favorites = ({ navigation }: any) => {
   const dispatch = useAppDispatch();
+  const { favorites } = useAppSelector((state) => state.item);
+
   const handleItem = (item: ItemType) => {
     dispatch(setItem(item));
     navigation.navigate(paths.DETAILS);
@@ -24,10 +25,16 @@ const Favorites = ({ navigation }: any) => {
           placeholder='Search'
           leftIcon={() => <SearchIcon color='#a4a4a4' />}
         />
-        <MasonryLayout
-          data={dummyItems}
-          onPress={(item: ItemType) => handleItem(item)}
-        />
+        {favorites?.length > 0 ? (
+          <MasonryLayout
+            data={favorites ?? []}
+            onPress={(item: ItemType) => handleItem(item)}
+          />
+        ) : (
+          <View className='h-[80%] justify-center items-center'>
+            <Text className='text-slate-700'>No Favorites</Text>
+          </View>
+        )}
       </View>
     </Layout>
   );

@@ -1,7 +1,7 @@
-import { EvilIcons, Feather, Ionicons } from '@expo/vector-icons';
+import { AntDesign, EvilIcons, Feather, Ionicons } from '@expo/vector-icons';
 
 export const HeartIcon = (props: any) => (
-  <Ionicons name='heart' size={24} color='#fff' {...props} />
+  <Ionicons name='heart' size={22} color='#fff' {...props} />
 );
 export const SettingsIcon = (props: any) => (
   <Feather name='settings' size={24} color='#fff' {...props} />
@@ -20,4 +20,7 @@ export const SearchIcon = (props: any) => (
 );
 export const PlayIcon = (props: any) => (
   <Ionicons name='play' size={24} color='#fff' {...props} />
+);
+export const CloseFilledIcon = (props: any) => (
+  <AntDesign name='closecircle' size={18} color='black' {...props} />
 );

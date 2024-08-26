@@ -7,5 +7,8 @@ import Login from './Login/Login';
 import Splash from './Splash/Splash';
 import Details from './Details/Details';
 import VideoDetails from './VideoDetails/VideoDetails';
+import AllItems from './AllItems/AllItems';
+import Search from './Search/Search';
+import Deposit from './Deposit/Deposit';
 
-export { Splash, Home, Favorites, Settings, Register, Onboarding, Login, Details, VideoDetails };
+export { Splash, Home, Favorites, Settings, Register, Onboarding, Login, Details, VideoDetails, AllItems, Search, Deposit };

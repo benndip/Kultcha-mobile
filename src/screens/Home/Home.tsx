@@ -1,7 +1,3 @@
-import { ChevronRightIcon, SearchIcon } from '../../assets/icons';
-import { images } from '../../assets/images';
-import { CustomInput, TopNavActions } from '../../components';
-import { categories } from '../../constants/categories';
 import React, { useState } from 'react';
 import {
   Image,
@@ -12,13 +8,16 @@ import {
   View,
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import { twMerge } from 'tailwind-merge';
+import { ItemType } from '../../@types';
+import { ChevronRightIcon, SearchIcon } from '../../assets/icons';
+import { CustomInput, TopNavActions } from '../../components';
+import { categories } from '../../constants/categories';
+import { paths } from '../../navigation/paths';
+import { setFavorites, setItem } from '../../redux/features/item/itemSlice';
+import { useAppDispatch } from '../../redux/store';
 import { defaultSpacing, DEVICE_HEIGHT } from './../../constants/sizes';
 import styles from './Home.style';
-import { twMerge } from 'tailwind-merge';
-import { useAppDispatch } from '../../redux/store';
-import { ItemType } from '../../@types';
-import { setItem } from '../../redux/features/item/itemSlice';
-import { paths } from '../../navigation/paths';
 
 const Home = ({ navigation }: any) => {
   const [active, setActive] = useState(categories[0].title);
@@ -28,11 +27,18 @@ const Home = ({ navigation }: any) => {
     dispatch(setItem(item));
     navigation.navigate(paths.DETAILS);
   };
+  const handleAddFavorite = () => {
+    dispatch(
+      setFavorites(
+        categories.filter((item) => item.title === active)?.[0].items[0]
+      )
+    );
+  };
   return (
     <View style={{ flex: 1 }}>
       {/* <StatusBar style='light' /> */}
       <ImageBackground
-        source={images.village}
+        source={categories.filter((item) => item.title === active)?.[0].mainBg}
         style={styles.gradientImage}
         borderBottomRightRadius={50}
         borderBottomLeftRadius={50}
@@ -42,7 +48,16 @@ const Home = ({ navigation }: any) => {
           style={styles.gradientView}
           locations={[0.4, 1]}
         >
-          <TopNavActions />
+          <TopNavActions
+            showPurse={false}
+            showHeart
+            onHeart={handleAddFavorite}
+          />
+          <View className='flex-1 justify-end items-center'>
+            <Text className='font-bold text-center text-white text-lg'>
+              {categories.filter((item) => item.title === active)?.[0].title}
+            </Text>
+          </View>
         </LinearGradient>
       </ImageBackground>
       <View className='flex-1' style={{ ...defaultSpacing }}>
@@ -51,7 +66,7 @@ const Home = ({ navigation }: any) => {
           leftIcon={() => <SearchIcon color='#a4a4a4' />}
         />
         <View className='flex-row items-center justify-around my-2'>
-          {categories.map((item) => (
+          {categories.slice(0, 4).map((item) => (
             <TouchableOpacity
               key={item.title}
               className='p-3 mx-2 flex-col'
@@ -70,7 +85,11 @@ const Home = ({ navigation }: any) => {
               )}
             </TouchableOpacity>
           ))}
-          <TouchableOpacity className='ml-3w-10 p-3 items-center'>
+          <TouchableOpacity
+            className='ml-3w-10 p-3 flex-row items-center'
+            onPress={() => navigation.navigate(paths.ALLITEMS)}
+          >
+            <Text>All</Text>
             <ChevronRightIcon color={'#000'} size={20} />
           </TouchableOpacity>
         </View>

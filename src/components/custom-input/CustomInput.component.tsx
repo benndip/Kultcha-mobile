@@ -27,7 +27,7 @@ const CustomInput = ({
       style={{
         height,
       }}
-      className='flex-row flex border border-[#a4a4a4] rounded-md overflow-hidden bg-white px-1'
+      className='flex-row flex border border-[#a4a4a4] rounded-lg overflow-hidden bg-white px-1'
     >
       {leftIcon?.() && <View className={iconClassName}>{leftIcon?.()}</View>}
       <TextInput placeholderTextColor={'#a4a4a4'} className={textInputClassName} {...props} />

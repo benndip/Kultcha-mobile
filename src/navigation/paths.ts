@@ -12,5 +12,8 @@ export const paths = {
   SETTINGS: 'Settings',
   BOTTOMNAVIGATION: 'BottomNavigation',
   DETAILS: 'Details',
-  VIDEODETAILS: 'VideoDetails'
+  VIDEODETAILS: 'VideoDetails',
+  ALLITEMS: 'AllItems',
+  SEARCH: 'Search',
+  DEPOSIT: 'Deposit',
 } as const;

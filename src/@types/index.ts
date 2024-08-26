@@ -7,17 +7,19 @@ export type RootStackParamList = {
   AuthStack: undefined;
   Details: undefined;
   VideoDetails: undefined;
+  Search: undefined;
+  Deposit: undefined;
 };
 
-export interface LayoutProps {
+export interface LayoutProps extends TopNavActionsProps {
   children: ReactNode | ReactNode[];
-  rightIcon?: () => ReactNode;
-  leftIcon?: () => ReactNode;
 }
 export interface TopNavActionsProps {
-  rightIcon?: () => ReactNode;
-  leftIcon?: () => ReactNode;
   onBack?: () => void
+  showPurse?: boolean
+  showSearch?: boolean
+  showHeart?: boolean
+  onHeart?: () => void
 }
 
 export interface ItemType {
