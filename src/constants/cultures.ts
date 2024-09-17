@@ -1,0 +1,92 @@
+export const cultures = [
+    {
+      id: 1,
+      name: "Bamileke",
+      region: "West",
+      language: "Bamileke languages",
+    },
+    {
+      id: 2,
+      name: "Fang",
+      region: "South",
+      language: "Fang",
+    },
+    {
+      id: 3,
+      name: "Bassa",
+      region: "Littoral",
+      language: "Bassa",
+    },
+    {
+      id: 4,
+      name: "Fulani (Fula or Fulbe)",
+      region: "North",
+      language: "Fulfulde",
+    },
+    {
+      id: 5,
+      name: "Beti",
+      region: "Center and South",
+      language: "Ewondo, Bulu",
+    },
+    {
+      id: 6,
+      name: "Bakweri",
+      region: "Southwest",
+      language: "Mokpwe",
+    },
+    {
+      id: 7,
+      name: "Duala",
+      region: "Littoral",
+      language: "Duala",
+    },
+    {
+      id: 8,
+      name: "Tikar",
+      region: "Adamawa and Northwest",
+      language: "Tikar",
+    },
+    {
+      id: 9,
+      name: "Kirdi",
+      region: "Far North",
+      language: "Various languages",
+    },
+    {
+      id: 10,
+      name: "Mafa",
+      region: "Far North",
+      language: "Mafa",
+    },
+    {
+      id: 11,
+      name: "Baka (Pygmy)",
+      region: "East",
+      language: "Baka",
+    },
+    {
+      id: 12,
+      name: "Bamoun",
+      region: "West",
+      language: "Bamoun",
+    },
+    {
+      id: 13,
+      name: "Mbo",
+      region: "Southwest",
+      language: "Mbo",
+    },
+    {
+      id: 14,
+      name: "Gbaya",
+      region: "East",
+      language: "Gbaya",
+    },
+    {
+      id: 15,
+      name: "Shuwa Arab",
+      region: "Far North",
+      language: "Shuwa Arabic",
+    },
+  ];
